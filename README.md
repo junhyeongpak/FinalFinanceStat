@@ -143,6 +143,7 @@ real_final_data <- cbind(final_data1, final_data2)
 ```{r cars}
 summary(real_final_data$외국인비율)
 ```
+![외국인 비율 요약 통계량](./1.png)
 
 ## 외국인 비율 히스토그램 확인하기
 
