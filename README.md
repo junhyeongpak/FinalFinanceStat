@@ -153,6 +153,7 @@ log_real_final_data$외국인비율 <- log10(log_real_final_data$외국인비율
 # 로그변환 실시해서 히스토 그램 그려본 것
 hist(log_real_final_data$외국인비율, breaks = 30)
 ```
+![외국인 비율 히스토그램](./2.png)
 
 ## 외국인 비율에 따른 거래량
 
@@ -162,12 +163,13 @@ ggplot(data = log_real_final_data, aes(x = 외국인비율, y = 거래량, fill 
   labs(x = "외국인비율", y = "거래량", title = "외국인 비율에 따른 거래량") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
-
+![외국인 비율에 따른 거래량](./3.png)
 ## 거래량도 로그변환이 필요해 보인다.
 
 ```{r pressure, echo=FALSE}
 hist(log_real_final_data$거래량)
 ```
+![거래량의 로그 변환 필요해 보임.](./4.png)
 
 ## 거래량도 로그 변환 하고 나서 ggplot으로 그려보기
 
@@ -183,6 +185,7 @@ ggplot(data = log_real_final_data, aes(x = 외국인비율, y = 거래량, fill 
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 ```
+![다시 거래량 ggplot으로 그려보기](./5.png)
 
 ### 대체로 외국인 비율에 따라서 거래량도 상승하는 것을 볼 수 있다!
 
@@ -199,6 +202,7 @@ ggplot(data = log_real_final_data, aes(x = 외국인비율, y = 시가총액, fi
   geom_smooth(method = "lm", se = FALSE) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+![시가총액 ggplot](./6.png)
 
 ### 대체로 외국인 비율이 높아짐에 따라 증가하는 것을 볼 수 있다.
 
@@ -215,6 +219,7 @@ ggplot(data = log_real_final_data, aes(x = 외국인비율, y = 매출액, fill 
   geom_smooth(method = "lm", se = FALSE) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+![매출액 로그 변환 후 ggplot](./7.png)
 
 ### 대체로 외국인비율이 증가함에 따라 매출액도 크게 상승하고 있다.
 
@@ -231,6 +236,7 @@ ggplot(data = log_real_final_data, aes(x = 외국인비율, y = 당기순이익,
   geom_smooth(method = "lm", se = FALSE) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+![당기순이익 로그 변환 후 ggplot](./8.png)
 
 ## 외국인 비율에 따른 보통주배당금 변화
 
@@ -245,5 +251,6 @@ ggplot(data = log_real_final_data, aes(x = 외국인비율, y = 보통주배당�
   geom_smooth(method = "lm", se = FALSE) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
+![보통주배당금로그변환후 ggplot](./9.png)
 
 ## 외국인 비율이 다른 요소들에 영향을 미치는지는 모르겠지만 크게 관련이 있다는 것을 알 수 있다.
